@@ -27,3 +27,16 @@ addToCartButtonDOM.forEach((addToCartButtonDOM) => {
           <button class="btn btn--danger btn--small" data-action="REMOVE_ITEM">&times;</button>
         </div>
       `);
+
+      //Increase Item
+      cartItemsDOM.forEach(cartItemDOM => {
+        if (cartItemDOM.querySelector('.cart__item__name').innerText === product.name){
+          cartItemDOM.querySelector('[data-action="INCREASE_ITEM"]').addEventListener('click', () => {
+            cart.forEach(cartItem => {
+              if(cartItem.name === product.name){
+                cartItemDOM.querySelector('.cart__item__quantity').innerText = ++cartItem.quantity; 
+                localStorage.setItem('cart', JSON.stringify(cart));
+                countCartTotal()
+              }
+            });
+          });
