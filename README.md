@@ -51,6 +51,6 @@ $ open index.html
 * Hard coding the values into the html made getting to the logic quicker but is restrictive in terms of expansion. 
 * The user can add/remove items from their basket and add discounts 
 * The lack of a testing framework made refractoring the code quite tricky hence why I have repeated the assignment using TDD with Jasmine. 
-* An incomplete version using TDD can be seen here [Retail Therapy JS]!(https://github.com/CazaBelle/retail-therapy-js) 
+* An incomplete version using TDD can be seen here [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) 
 
 
