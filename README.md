@@ -46,11 +46,12 @@ $ open index.html
 [![Watch the video](images/demo.png)](https://youtu.be/pFW-GAft_zI)
 
 # Approach 
-* As this was intended as an experimental attempt at the test there was no testing. I wanted to use this opportunity to explore javascript instead of using a Ruby which would have been more comfortable. 
-* I assumed once I had felt more comfortable with language I would have time to redo the project with a testing framework. This is a quick solution that meets most of the requirements and is fully responsive. 
+* As this was intended as an experimental attempt at the challenge there was no testing. I wanted to use this opportunity to explore javascript. 
+* The plan had been to repeat the assignment once had felt more comfortable with the logic I would repeat it following strict TDD. This is a quick solution that meets most of the requirements and is fully responsive. 
 * Hard coding the values into the html made getting to the logic quicker but is restrictive in terms of expansion. 
-* The user can add/remove items from their basket and add discounts 
-* The lack of a testing framework made refractoring the code quite tricky hence why I have repeated the assignment using TDD with Jasmine. 
-* An incomplete version using TDD can be seen here [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) 
+* The user can add/remove items from their basket and add discounts.
+* The development of this program provided me with valuable experience with javascript and made me reminded me how important testing can be when debugging and refactoring.
+* For reasons mentioned above I have repeated the assignment using TDD with Jasmine. 
+* An incomplete version using TDD meeting the first few user stories can be seen here [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) 
 
 
