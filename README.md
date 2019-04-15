@@ -41,4 +41,4 @@ $ open index.html
 * 
 
 # Demo 
-[![Watch the video](<iframe width="560" height="315" src="https://www.youtube.com/embed/pFW-GAft_zI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)](https://youtu.be/pFW-GAft_zI)
+[![Watch the video](images/demo.png)](https://youtu.be/pFW-GAft_zI)
