@@ -28,6 +28,15 @@ addToCartButtonDOM.forEach((addToCartButtonDOM) => {
         </div>
       `);
 
+      if(document.querySelector('.cart__footer') === null){
+        cartDOM.insertAdjacentHTML('afterend', `
+        <div class="cart__footer">
+          <h3 class="cart__total">Total</h3>
+            <input class="add-promo-value" type="text" placeholder="add promo"/>
+            <button id="promo" class="btn btn--primary btn--small" data-action="ADD_PROMO">Add Promo</button>
+        </div>
+        `);
+      }
       //Increase Item
       cartItemsDOM.forEach(cartItemDOM => {
         if (cartItemDOM.querySelector('.cart__item__name').innerText === product.name){
@@ -40,3 +49,24 @@ addToCartButtonDOM.forEach((addToCartButtonDOM) => {
               }
             });
           });
+
+           //Decrease item from cart
+           cartItemDOM.querySelector('[data-action="DECREASE_ITEM"]').addEventListener('click', () => {
+             cart.forEach(cartItem => {
+               
+               if(cartItem.name === product.name){
+                 if(cartItem.quantity > 1) {
+                 cartItemDOM.querySelector('.cart__item__quantity').innerText = --cartItem.quantity; 
+                 localStorage.setItem('cart', JSON.stringify(cart));
+                 countCartTotal()
+                 }else {
+                   cartItemDOM.remove();
+                   cart = cart.filter(cartItem => cartItem.name !== product.name);
+                   localStorage.setItem('cart', JSON.stringify(cart));
+                   addToCartButtonDOM.innerText = 'Add to Cart';
+                  
+                 }
+               }
+             });
+           });
+          
