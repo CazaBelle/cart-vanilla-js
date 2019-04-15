@@ -44,7 +44,7 @@ addToCartButtonDOM.forEach((addToCartButtonDOM) => {
             cart.forEach(cartItem => {
               if(cartItem.name === product.name){
                 cartItemDOM.querySelector('.cart__item__quantity').innerText = ++cartItem.quantity; 
-                localStorage.setItem('cart', JSON.stringify(cart));
+              
                 countCartTotal()
               }
             });
@@ -53,20 +53,47 @@ addToCartButtonDOM.forEach((addToCartButtonDOM) => {
            //Decrease item from cart
            cartItemDOM.querySelector('[data-action="DECREASE_ITEM"]').addEventListener('click', () => {
              cart.forEach(cartItem => {
-               
+              
                if(cartItem.name === product.name){
                  if(cartItem.quantity > 1) {
                  cartItemDOM.querySelector('.cart__item__quantity').innerText = --cartItem.quantity; 
-                 localStorage.setItem('cart', JSON.stringify(cart));
+             
                  countCartTotal()
                  }else {
                    cartItemDOM.remove();
                    cart = cart.filter(cartItem => cartItem.name !== product.name);
-                   localStorage.setItem('cart', JSON.stringify(cart));
                    addToCartButtonDOM.innerText = 'Add to Cart';
                   
                  }
                }
              });
            });
-          
+  
+          //Remove item from cart 
+          cartItemDOM.querySelector('[data-action="REMOVE_ITEM"]').addEventListener('click', () => {
+            cart.forEach(cartItem => {
+              
+              if(cartItem.name === product.name){
+                  cartItemDOM.remove();
+                  cart = cart.filter(cartItem => cartItem.name !== product.name);
+                  localStorage.setItem('cart', JSON.stringify(cart));
+                  countCartTotal()
+                  addToCartButtonDOM.innerText = 'Add to Cart';
+                  addToCartButtonDOM.disabled = false;
+              }      
+            });
+          });
+        }
+      })
+    }   
+  }) 
+})
+function countCartTotal() {
+  let cartTotal = 0 ;
+  cart.forEach(cartItem => {
+    cartTotal = cartTotal + (Number(cartItem.price) * cartItem.quantity)
+    console.log(cartTotal)
+  })
+  document.querySelector('.cart__total').innerText = `Total: £${cartTotal}`
+
+}
