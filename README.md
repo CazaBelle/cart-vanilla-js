@@ -1,5 +1,5 @@
 # Cart
-A basic web app that allows the user to add items to their cart 
+A basic web app that allows the user to add items to their cart. Please visit [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) for a fully TDDed version of the application.
 
 # User Stories 
 ```
@@ -52,6 +52,6 @@ $ open index.html
 * The user can add/remove items from their basket and add discounts.
 * The development of this program provided me with valuable experience with javascript and made me reminded me how important testing can be when debugging and refactoring.
 * For reasons mentioned above I have repeated the assignment using TDD with Jasmine. 
-* An incomplete version using TDD meeting the first few user stories can be seen here [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) 
+* An complete version using TDD meeting the first 7 user stories can be seen here [Retail Therapy JS](https://github.com/CazaBelle/retail-therapy-js) 
 
 
